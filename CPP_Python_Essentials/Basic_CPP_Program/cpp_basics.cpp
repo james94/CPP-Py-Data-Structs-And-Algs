@@ -124,16 +124,20 @@ void displayYearPurchased(const medicalImagingScanner& medImgScanner) {
 int main() {
     medicalImagingScanner medicalImgScan;
     medicalImgScan = askName(medicalImgScan); // pass by value, return by value
+    displayName(medicalImgScan); // pass by reference
     askName(medicalImgScan); // pass by reference
+    displayName(medicalImgScan); // pass by reference
     medicalImgScan.cost = 5099.99; // public attributes in struct
     medicalImgScan.yearBought = 2018; // public attributes in struct
+    displayYearPurchased(medicalImgScan)
     medicalImgScan.minutesScanned = 50; // public attributes in struct
-    displayName(medicalImgScan); // pass by reference
+    displayScanTime(medicalImgScan);
+    
     medicalImgScan.scannerType = MEDICAL_IMAGING_TYPE.MRI;
     displayType(medicalImgScan); // pass by reference
     askOrgansScanned(medicalImgScan); // pass by reference
     displayOrgansScanned(medicalImgScan); // pass by reference
-    displayScanTime(medicalImgScan);
+    
 
     cleanupOrgansScanned(medicalImgScan); // pass by reference
     displayOrgansScanned(medicalImgScan); // pass by reference
