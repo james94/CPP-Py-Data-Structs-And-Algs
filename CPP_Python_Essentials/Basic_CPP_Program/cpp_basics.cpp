@@ -113,7 +113,7 @@ void cleanupOrgansScanned(medicalImagingScanner& medImgScanner) {
 }
 
 void displayScanTime(const medicalImagingScanner& medImgScanner) {
-    std::cout << "Medical Imaging Scan Time:" << medImgScanner.minutesScanned << std::endl;
+    std::cout << "Medical Imaging Scan Time: " << medImgScanner.minutesScanned << std::endl;
 }
 
 void displayYearPurchased(const medicalImagingScanner& medImgScanner) {
@@ -123,7 +123,7 @@ void displayYearPurchased(const medicalImagingScanner& medImgScanner) {
 
 int main() {
     medicalImagingScanner medicalImgScan;
-    medicalImgScan askName(medicalImgScan); // pass by value, return by value
+    medicalImgScan = askName(medicalImgScan); // pass by value, return by value
     askName(medicalImgScan); // pass by reference
     medicalImgScan.cost = 5099.99; // public attributes in struct
     medicalImgScan.yearBought = 2018; // public attributes in struct
@@ -140,4 +140,3 @@ int main() {
 
     return 0;
 }
-
